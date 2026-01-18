@@ -63,7 +63,7 @@ TigerKing_Vision-Swarm-GCS/
 
 📄 License
 
-Copyright (c) 2026 [TigerKing Com.,LTD.]
+Copyright (c) 2026 TigerKing
 
 All rights reserved.
 
@@ -80,6 +80,7 @@ may result in severe civil and criminal penalties.
 
 
 📧 Contact for Collaboration
+
   This project is proprietary software. All rights are reserved.
   If you are interested in collaboration, licensing, or any form of partnership regarding this software, please contact me directly to discuss terms:
   · Whatsup: TigerKingGCS_Community
@@ -94,4 +95,5 @@ may result in severe civil and criminal penalties.
   · The broader drone and open-source community for inspiration.
 
 ⚠️ LICENSE NOTICE
+
   This is NOT open-source software. This project and its source code are released under a strict, proprietary license. All rights are reserved by the copyright holder. See the LICENSE file for full terms. Unauthorized use, copying, modification, or distribution is strictly prohibited.
