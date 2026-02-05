@@ -1,4 +1,4 @@
-# TigerKing_Vision-Swarm-GCS
+# TigerKingGCS
 Vision-Swarm-GCS is a modern, Python-based open-source Ground Control Station (GCS) designed for next-generation autonomous drone operations. It empowers developers and researchers to easily manage multiple drones (swarms) while integrating real-time computer vision capabilities for intelligent tasks. Built with simplicity and extensibility in mind, it provides a user-friendly interface to orchestrate complex missions without sacrificing power.
 
 ✨ Key Features
@@ -22,7 +22,7 @@ Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/TigerKing6424/TigerKing_Vision-Swarm-GCS
+   git clone https://github.com/TigerKing6424/TigerKingGCS
    ```
 2. (Recommended) Create and activate a virtual environment:
    ```bash
@@ -42,7 +42,7 @@ Installation
 🧩 Project Structure (Example)
 
 ```
-TigerKing_Vision-Swarm-GCS/
+TigerKingGCS/
 ├── main.py                    # Main application entry point
 ├── requirements.txt           # Python dependencies
 ├── core/                      # Core GCS logic (vehicle manager, link handler)
