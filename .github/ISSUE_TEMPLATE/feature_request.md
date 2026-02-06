@@ -1,9 +1,10 @@
 ---
-name: 🚀 Feature Request
+name: "\U0001F680 Feature Request"
 about: Suggest an idea or improvement for TigerKingGCS
 title: "[FEATURE] "
 labels: enhancement
-assignees: ""
+assignees: ''
+
 ---
 
 ## 🚀 Feature Summary
