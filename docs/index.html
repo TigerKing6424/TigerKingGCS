@@ -35,6 +35,10 @@
             margin: auto;
             padding: 40px 20px;
         }
+        .logo img {
+          height: 64px;
+          margin-bottom: 20px;
+        }
 
         .plans {
             display: grid;
@@ -99,6 +103,23 @@
             font-size: 14px;
             color: #888;
         }
+        body::before {
+          content: "";
+          position: fixed;
+          inset: 0;
+          background: url("intro.jpg") center/cover no-repeat;
+          filter: blur(18px);
+          transform: scale(1.1);
+          z-index: -2;
+        }
+        
+        body::after {
+          content: "";
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.55);
+          z-index: -1;
+        }
     </style>
 </head>
 <body>
@@ -109,6 +130,9 @@
 </header>
 
 <div class="container">
+    <div class="logo">
+      <img src="logo.svg" alt="TigerKing Pro">
+    </div>
 
     <div class="plans">
 
