@@ -11,30 +11,17 @@
 body {
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
-    color: #fff;
+    color: #ffffff;
     min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #0b0f14 0%,
+        #141a23 40%,
+        #1f2933 100%
+    );
 }
 
-/* ===== BACKGROUND ===== */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: url("intro_photo.png") center/cover no-repeat;
-    filter: blur(18px);
-    transform: scale(1.1);
-    z-index: -2;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.65);
-    z-index: -1;
-}
-
-/* ===== HEADER ===== */
 header {
     text-align: center;
     padding: 60px 20px 30px;
