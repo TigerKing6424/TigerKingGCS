@@ -155,7 +155,7 @@ input:focus, select:focus {
 </div>
 
 <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbwOj5HaE2vsnkXiFFxEzYIt1TRyDRshgA-riVysJqwh-B_q8Nv9TKbsjkBAHmxUUcpqDw/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzX-DsWxXeeaQLiUra1tqITMkTcCA8JVJbdjNJeIv5aQZYgObqJSaWQ3rbMXk2PuIKyyw/exec";
 
 const form = document.getElementById("subForm");
 
@@ -164,38 +164,21 @@ form.addEventListener("submit", async (e) => {
 
     const formData = new FormData(form);
 
-    const data = {
-        uid: formData.get("uid"),
-        years: formData.get("year"),
-        users: formData.get("users"),
-        email: formData.get("email"),
-        txid: formData.get("transaction")
-    };
-
     try {
         const response = await fetch(scriptURL, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
+            body: formData
         });
 
-        const result = await response.json();
-
-        if (result.status === "ok") {
-            alert("Submission successful!");
-            form.reset();
-        } else {
-            alert("Server error");
-            console.log(result);
-        }
+        alert("Submission successful!");
+        form.reset();
 
     } catch (error) {
         alert("Network error");
         console.error(error);
     }
 });
+
 </script>
 
 
