@@ -111,7 +111,7 @@ input:focus, select:focus {
         Activate TigerKingGCS Professional Plan
     </div>
 
-    <form action="https://docs.google.com/spreadsheets/d/1nmZjpC6XVc8DD3HiMos0ArU2SByLwUA_XWew3E7bC4c/edit?gid=0#gid=0" method="POST" target="_blank">
+    <form id="subForm"> 
 
         <label>UID</label>
         <input type="uid" name="uid" placeholder="0123456" required>
@@ -140,7 +140,7 @@ input:focus, select:focus {
 
         <div class="qr-box">
             <p>Scan & Pay</p>
-            <img src="qr.png" alt="Bank QR">
+            <img src="qr.jpg" alt="Bank QR">
         </div>
 
         <button class="button" type="submit">
@@ -158,4 +158,27 @@ input:focus, select:focus {
 </html>
 
 </script>
+
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbz4XJYW53YuyhXVgJKhmPUGcmpzgoNXti2PkdIXcEjZ82OCFKTZ0QPBktq87EqoSIQEng/exec";
+
+const form = document.getElementById("subForm");
+
+form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: new FormData(form)
+    })
+    .then(response => {
+        alert("Submission successful! We will verify your payment.");
+        form.reset();
+    })
+    .catch(error => {
+        alert("Something went wrong!");
+    });
+});
+</script>
+
 
