@@ -163,16 +163,18 @@ form.addEventListener("submit", e => {
     e.preventDefault();
 
     fetch(scriptURL, {
-        method: "POST",
-        body: new FormData(form)
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        uid: form.uid.value,
+        years: form.year.value,
+        users: form.users.value,
+        email: form.email.value,
+        txid: form.transaction.value
+      })
     })
-    .then(response => {
-        alert("Submission successful! We will verify your payment.");
-        form.reset();
-    })
-    .catch(error => {
-        alert("Something went wrong!");
-    });
 });
 </script>
 
