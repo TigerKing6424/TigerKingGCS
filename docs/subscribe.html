@@ -155,28 +155,49 @@ input:focus, select:focus {
 </div>
 
 <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbwWus6m6sk3T9oKJywOGAYTZ1tkK23u9YRLa86aMYQSNtgcfpgQsrRsu4k2QSxNm5pDyg/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbyoFWth_sUIlfa8iYHnRxGVJ5EgYqvtfPoZ20ic2kU75X_eRqVhsdwfeSjEle9zIgmH/exec";
 
 const form = document.getElementById("subForm");
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    fetch(scriptURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        uid: form.uid.value,
-        years: form.year.value,
-        users: form.users.value,
-        email: form.email.value,
-        txid: form.transaction.value
-      })
-    })
+    const formData = new FormData(form);
+
+    const data = {
+        uid: formData.get("uid"),
+        years: formData.get("year"),
+        users: formData.get("users"),
+        email: formData.get("email"),
+        txid: formData.get("transaction")
+    };
+
+    try {
+        const response = await fetch(scriptURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (result.status === "ok") {
+            alert("Submission successful!");
+            form.reset();
+        } else {
+            alert("Server error");
+            console.log(result);
+        }
+
+    } catch (error) {
+        alert("Network error");
+        console.error(error);
+    }
 });
 </script>
+
 
 </body>
 </html>
