@@ -1,0 +1,59 @@
+<input id="uid" placeholder="UID">
+<input id="email" placeholder="Email">
+<input id="txid" placeholder="Transaction ID">
+
+<select id="plan">
+  <option>Pro</option>
+</select>
+
+<select id="years">
+  <option>1</option>
+  <option selected>2</option>
+  <option>3</option>
+</select>
+
+<select id="users">
+  <option>5</option>
+  <option>10</option>
+  <option>20</option>
+</select>
+
+<input type="file" id="slip">
+<button onclick="submitForm()">Submit</button>
+
+<script>
+async function submitForm() {
+  const file = document.getElementById("slip").files[0];
+
+  let fileData = null;
+  if (file) {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    await new Promise(res => reader.onload = res);
+
+    const base64 = reader.result.split(",")[1];
+    fileData = {
+      name: file.name,
+      type: file.type,
+      base64: base64
+    };
+  }
+
+  const payload = {
+    uid: uid.value,
+    years: years.value,
+    users: users.value,
+    email: email.value,
+    txid: txid.value,
+    file: fileData
+  };
+
+  await fetch("PASTE_APPS_SCRIPT_URL_HERE", {
+    method: "POST",
+    body: JSON.stringify(payload)
+  });
+
+  alert("Submitted successfully!");
+}
+</script>
+
