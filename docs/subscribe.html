@@ -111,9 +111,12 @@ input:focus, select:focus {
         Activate TigerKingGCS Professional Plan
     </div>
 
-    <form action="YOUR_GOOGLE_FORM_URL" method="POST" target="_blank">
+    <form action="https://docs.google.com/spreadsheets/d/1nmZjpC6XVc8DD3HiMos0ArU2SByLwUA_XWew3E7bC4c/edit?gid=0#gid=0" method="POST" target="_blank">
 
-        <label>User License</label>
+        <label>UID</label>
+        <input type="uid" name="uid" placeholder="0123456" required>
+        
+        <label>User Amount</label>
         <select name="users" required>
             <option value="">Select Users</option>
             <option value="5">5 Users</option>
@@ -133,7 +136,7 @@ input:focus, select:focus {
         <input type="email" name="email" placeholder="example@email.com" required>
 
         <label>Bank Transaction Number</label>
-        <input type="text" name="transaction" placeholder="Enter transfer reference number" required>
+        <input type="txid" name="transaction" placeholder="Enter transfer reference number" required>
 
         <div class="qr-box">
             <p>Scan & Pay</p>
