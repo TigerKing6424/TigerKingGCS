@@ -1,59 +1,158 @@
-<input id="uid" placeholder="UID">
-<input id="email" placeholder="Email">
-<input id="txid" placeholder="Transaction ID">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TigerKingGCS – Subscribe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<select id="plan">
-  <option>Pro</option>
-</select>
-
-<select id="years">
-  <option>1</option>
-  <option selected>2</option>
-  <option>3</option>
-</select>
-
-<select id="users">
-  <option>5</option>
-  <option>10</option>
-  <option>20</option>
-</select>
-
-<input type="file" id="slip">
-<button onclick="submitForm()">Submit</button>
-
-<script>
-async function submitForm() {
-  const file = document.getElementById("slip").files[0];
-
-  let fileData = null;
-  if (file) {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    await new Promise(res => reader.onload = res);
-
-    const base64 = reader.result.split(",")[1];
-    fileData = {
-      name: file.name,
-      type: file.type,
-      base64: base64
-    };
-  }
-
-  const payload = {
-    uid: uid.value,
-    years: years.value,
-    users: users.value,
-    email: email.value,
-    txid: txid.value,
-    file: fileData
-  };
-
-  await fetch("PASTE_APPS_SCRIPT_URL_HERE", {
-    method: "POST",
-    body: JSON.stringify(payload)
-  });
-
-  alert("Submitted successfully!");
+<style>
+* {
+    box-sizing: border-box;
 }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #111827, #1f2937);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Glass Card */
+.container {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 40px;
+    width: 420px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-size: 26px;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #9ca3af;
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background: #111827;
+    color: white;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #f59e0b;
+}
+
+.qr-box {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.qr-box img {
+    width: 160px;
+    border-radius: 12px;
+}
+
+.button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.footer {
+    text-align: center;
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Pro Subscription</h1>
+    <div class="subtitle">
+        Activate TigerKingGCS Professional Plan
+    </div>
+
+    <form action="YOUR_GOOGLE_FORM_URL" method="POST" target="_blank">
+
+        <label>User License</label>
+        <select name="users" required>
+            <option value="">Select Users</option>
+            <option value="5">5 Users</option>
+            <option value="10">10 Users</option>
+            <option value="20">20 Users</option>
+        </select>
+
+        <label>Subscription Period</label>
+        <select name="year" required>
+            <option value="">Select Duration</option>
+            <option value="1 Year">1 Year</option>
+            <option value="2 Years (10% OFF)">2 Years (10% OFF)</option>
+            <option value="3 Years (15% OFF)">3 Years (15% OFF)</option>
+        </select>
+
+        <label>Your Email</label>
+        <input type="email" name="email" placeholder="example@email.com" required>
+
+        <label>Bank Transaction Number</label>
+        <input type="text" name="transaction" placeholder="Enter transfer reference number" required>
+
+        <div class="qr-box">
+            <p>Scan & Pay</p>
+            <img src="qr.png" alt="Bank QR">
+        </div>
+
+        <button class="button" type="submit">
+            Submit Payment Info
+        </button>
+
+    </form>
+
+    <div class="footer">
+        After verification, your license will be activated.
+    </div>
+</div>
+
+</body>
+</html>
+
 </script>
 
