@@ -5,6 +5,9 @@
 <title>TigerKingGCS – Subscribe</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
 * {
     box-sizing: border-box;
@@ -93,6 +96,29 @@ input:focus, select:focus {
     opacity: 0.85;
     transform: translateY(-2px);
 }
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 224, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00e0ff;
+  font-size: 18px;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #00e0ff;
+  color: black;
+  transform: scale(1.1);
+}
 
 .footer {
     text-align: center;
@@ -106,6 +132,9 @@ input:focus, select:focus {
 <body>
 
 <div class="container">
+    <a href="index.html" class="back-btn">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
     <h1>Pro Subscription</h1>
     <div class="subtitle">
         Activate TigerKingGCS Professional Plan
