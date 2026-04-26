@@ -60,3 +60,36 @@ This project is currently in PILOT (experimental) stage.
 - Basic MAVLink connection
 - Telemetry logging (ALT, GPS)
 - Early UI prototype
+
+## v1.0.0 - 2026-04-02 — Initial Release
+
+First stable release of **TigerKing GCS** 🎉
+
+### ✨ Highlights
+
+* 🔐 User authentication (register, login, email verification, 2FA)
+* 👥 Referral system with unique codes & auto tracking
+* 💳 Crypto payments via NOWPayments (invoice-based)
+* 📊 Referral dashboard (points, invited users, progress)
+* 🎯 Milestone reward system (invite targets)
+
+### ⚙️ Core
+
+* Cloudflare D1 database integration
+* Orders & commission tracking
+* Secure API structure
+
+### 🛠 Fixes & Improvements
+
+* Improved referral + commission logic
+* Better error handling
+* Responsive UI (mobile + desktop)
+
+### 📌 Notes
+
+* First production-ready version
+* More features coming soon (more control system, analytics, etc.)
+
+---
+
+Thanks for using TigerKing GCS ❤️
